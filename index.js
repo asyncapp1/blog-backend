@@ -4,7 +4,7 @@ import blogRoute from "./routes/blog_route";
 import userRoute from "./routes/user_route";
 
 const app = express();
-const port = 5000 || process.env.PORT;
+const port = process.env.PORT || 3000;
 app.use(express.json());
 
 app.get("/api", (req, res) => {
