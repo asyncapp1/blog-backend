@@ -16,7 +16,7 @@ app.use("/user", userRoute);
 
 mongoose
   .connect(
-    "mongodb+srv://asyncapp1:E84mHKc9gCSfiQ3a@cluster0.nptmact.mongodb.net/blogDB?retryWrites=true&w=majority"
+    "mongodb+srv://navneet:weqPfcpsWt1sXu4T@cluster0.zdlhn4g.mongodb.net/blogDB?retryWrites=true&w=majority"
   )
   .then(() => app.listen(port))
   .then(() => console.log(`Connected ${port}`));
