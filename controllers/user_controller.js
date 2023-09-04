@@ -3,7 +3,7 @@ import bcryptjs from "bcryptjs";
 
 export const getAllUser = async (req, res, next) => {
   const allUser = await user_model.find();
-  res.status(200).json({ allUser });
+  res.status(200).json(allUser);
 };
 
 export const getUserByID = async (req, res, next) => {
@@ -14,7 +14,7 @@ export const getUserByID = async (req, res, next) => {
     user = await user_model.findById(UserID);
   } catch (err) {}
 
-  res.status(200).json({ user });
+  res.status(200).json(user);
 };
 
 export const userSingUp = async (req, res, next) => {
@@ -41,7 +41,7 @@ export const userSingUp = async (req, res, next) => {
   } catch (err) {
     return res.status(500).json({ message: `=-------${err}` });
   }
-  return res.status(200).json({ user });
+  return res.status(200).json(user);
 };
 
 export const userlogin = async (req, res, next) => {
@@ -63,7 +63,7 @@ export const userlogin = async (req, res, next) => {
   const isPasswordCorrect = bcryptjs.compareSync(password, exesUser.password);
 
   if (isPasswordCorrect) {
-    return res.status(200).json({ exesUser });
+    return res.status(200).json(exesUser);
   } else {
     return res.status(500).json({ message: "your password is not currect" });
   }
